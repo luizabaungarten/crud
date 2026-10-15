@@ -1,0 +1,136 @@
+### =========================================================================
+### TESTES DA API DO SISTEMA WEB - REST Client
+### =========================================================================
+
+### Teste se o servidor está funcionando
+GET http://localhost:3000/
+Content-Type: application/json
+
+### -------------------------------------------------------------------------
+### OPERAÇÕES DE LEITOR (CRUD Completo)
+### -------------------------------------------------------------------------
+
+### Cadastrar Leitor 1 (Ana)
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Ana",
+    "email": "ana@gmail.com",
+    "telefone": "48-98877-6655"
+}
+
+### Cadastrar Leitor 2 (Bruno)
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Bruno",
+    "email": "bruno@gmail.com",
+    "telefone": "47-95544-3322"
+}
+
+### Cadastrar Leitor 3 (Diego)
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Diego",
+    "email": "diego@gmail.com",
+    "telefone": "47-94488-7755"
+}
+
+### Listar Todos os Usuários
+GET http://localhost:3000/usuarios
+Content-Type: application/json
+
+### Consultar Leitor por Código (ID 1 - Ana)
+GET http://localhost:3000/usuario/1
+Content-Type: application/json
+
+### Consultar Leitor por Nome
+GET http://localhost:3000/usuario/buscar/Bruno
+Content-Type: application/json
+
+### Atualizar Usuário (ID 3 - Diego trocando e-mail e telefone)
+PUT http://localhost:3000/usuario/3
+Content-Type: application/json
+
+{
+    "nome": "Diego",
+    "email": "diego.novo@gmail.com",
+    "senha": "47-66666-1666"
+}
+
+### Excluir Leitor por ID
+DELETE http://localhost:3000/usuario/4
+Content-Type: application/json
+
+
+### -------------------------------------------------------------------------
+### OPERAÇÕES DE LIVRO (CRUD Completo)
+### -------------------------------------------------------------------------
+
+### Cadastrar Livro 1 (Sapato Social Couro Oxford)
+POST http://localhost:3000/livro
+Content-Type: application/json
+
+{
+    "nomeProduto": "Arquitetura Limpa",
+    "categoria": "TECNICO",
+    "precoUnitario": 45.00,
+    "qtdeEstoque": 8,
+    "data": "2026-10-08"
+}
+
+### Cadastrar Livros 2 (Mocassim Couro Legítimo)
+POST http://localhost:3000/livro
+Content-Type: application/json
+
+{
+    "nomelivro": "Duna: o retorno",
+    "categoria": "FICCAO",
+    "precoUnitario": 650.00,
+    "qtdeEstoque": 30,
+    "data": "2026-10-08"
+}
+
+### Cadastrar Livros 3 (Bota Couro Legítimo)
+POST http://localhost:3000/livro
+Content-Type: application/json
+
+{
+    "nomeProduto": "Bota Couro Legítimo",
+    "categoria": "CASUAL",
+    "precoUnitario": 850.00,
+    "qtdeEstoque": 15,
+    "data": "2026-10-08"
+}
+
+### Listar Todos os Livros
+GET http://localhost:3000/livros
+Content-Type: application/json
+
+### Consultar Livros por Código (ID 1)
+GET http://localhost:3000/livro/1
+Content-Type: application/json
+
+### Consultar Livros por Nome
+GET http://localhost:3000/livro/buscar/Mocassim Couro Legítimo
+Content-Type: application/json
+
+### Atualizar Livros (ID 3 - Atualizando preço e quantidade em estoque)
+PUT http://localhost:3000/livro/3
+Content-Type: application/json
+
+{
+    "nomeProduto": "Bota Couro Legítimo",
+    "categoria": "CASUAL",
+    "precoUnitario": 899.90,
+    "qtdeEstoque": 20,
+    "data": "2026-10-08"
+}
+
+### Excluir Livros por ID
+DELETE http://localhost:3000/livro/4
+Content-Type: application/json
